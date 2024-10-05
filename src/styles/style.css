@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+body {
+    font-family: 'Caveat', sans-serif;
+    font-size: 25px;
+    width: fit-content;
+    padding: 0 5%; /*Ensure consistent Padding */
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    box-sizing: border-box; /* Remove any default margin from the body */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+header {
+    width: 100%;
+    background-color: transparent;
+    color: hsl(55, 62%, 75%);
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: hsl(55, 62%, 75%);
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+#gallery {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    background-color: transparent;
+    padding: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; /* Prevent line breaks */
+    position: relative;
+}
+
+#gallery img {
+    width: 100%; /* You can set a percentage if you want dynamic sizing */
+    height: auto;
+    margin-right: 20px;
+    object-fit: cover;
+    overflow: hidden; /* Ensure content doesn't overflow horizontally */
+}
+
+/* Social Media Buttons*/
+.social-media-buttons {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    gap: 18px;
+    margin-top: 20px; /* Space from content */
+}
+
+.social-media-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 40px;
+    background-color: transparent;
+    font-size: 1.25rem;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0px 0px 12px 4px hsla(0, 0%, 0%, 0.1);
+    transition: box-shadow .3s ease;
+}
+
+.social-media-buttons a:hover {
+    box-shadow: 0px 0px 12px 8px hsla(0, 0%, 0%, 0.1);
+}
+
+/* Responsiveness Code */
+
+/* For tablet and smaller screens */
+
+@media screen and (max-width: 1170px) {
+    #gallery img {
+        width: 150px; /* Reduce the size of the images */
+        margin-right: 10px;
+    }
+
+    .social-media-buttons {
+        justify-content: center; /* Center the buttons on smaller screens */
+    }
+}
+
+/* For mobile screens */
+@media screen and (max-width: 768px) {
+    .image-container {
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center images horizontally */
+    }
+
+    body {
+        font-size: 20px; /* Smaller text for mobile */
+    }
+
+    #gallery img {
+        width: 90%; /* Make images responsive and take up 90% of the container's width */
+        margin: 10px 0; /* Add margin to space images vertically */
+    }
+
+    .social-media-buttons {
+        flex-direction: row;
+        gap: 12px;
+        margin: 10px auto;
+    }
+}
